@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='django-errformer',
-    version='0.1.0',
+    version='0.1.1',
     description='Send errors and logs to Telegram chat.',
     long_description=open('Readme.md').read(),
     long_description_content_type='text/markdown',
