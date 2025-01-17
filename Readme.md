@@ -8,10 +8,13 @@ Send errors and logs to Telegram chat.
 pip install django-errformer
 ```
 
+Create a Telegram bot with [@BotFather](https://t.me/botfather) and get the token for it. This bot will be used to send messages to you.
+
 # Parameters
 
 *settings.py:*
 
+- ERRFORMER_TELEGRAM_BOT_TOKEN - Telegram bot token (required)
 - ERRFORMER_ADMIN_CHAT_ID - Telegram chat id (your Telegram chat id, required)
 - ERRFORMER_INCLUDE_TRACEBACK - Include traceback in message (default: True)
 - ERRFORMER_PROJECT_NAME - Project name (not required)

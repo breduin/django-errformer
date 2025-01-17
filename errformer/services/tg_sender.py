@@ -2,11 +2,9 @@ import requests
 
 from django.conf import settings
 
-from ..conf import ERRFORMER_TELEGRAM_BOT_TOKEN
 
-
-TELEGRAM_BOT_TOKEN = getattr(settings, "ERRFORMER_TELEGRAM_BOT_TOKEN", ERRFORMER_TELEGRAM_BOT_TOKEN)
-ADMIN_CHAT_ID = settings.ERRFORMER_ADMIN_CHAT_ID
+TELEGRAM_BOT_TOKEN = getattr(settings, "ERRFORMER_TELEGRAM_BOT_TOKEN")
+ADMIN_CHAT_ID = getattr(settings, "ERRFORMER_ADMIN_CHAT_ID")
 
 
 def send_telegram_message_to_admin(message):
