@@ -1,12 +1,20 @@
 # Errformer
 
+Send errors and logs to Telegram chat.
+
 # Install
+
+```bash
+pip install django-errformer
+```
 
 # Parameters
 
-- ERRFORMER_ADMIN_CHAT_ID - Telegram chat id
-- ERRFORMER_INCLUDE_TRACEBACK - Include traceback in message
-- ERRFORMER_PROJECT_NAME - Project name
+*settings.py:*
+
+- ERRFORMER_ADMIN_CHAT_ID - Telegram chat id (your Telegram chat id, required)
+- ERRFORMER_INCLUDE_TRACEBACK - Include traceback in message (default: True)
+- ERRFORMER_PROJECT_NAME - Project name (not required)
 
 # Usage
 
@@ -15,7 +23,14 @@
 ```python
 LOGGING = {
     "handlers": {
+        "level": "INFO",
         "telegram": {"class": "errformer.handlers.TelegramErrformerHandler"},
+    },
+    "loggers": {  # loggers for django.request, set your app name here
+        "django": {
+            "handlers": ["telegram", "console"],  # set handlers
+            "level": "INFO",  # set log level
+        },
     },
 }
 ```
@@ -28,3 +43,9 @@ MIDDLEWARE = [
     "errformer.middleware.ErrformerMiddleware",
 ]
 ```
+
+Find DjangoErrformerBot in Telegram and tell it '/start', so that it can send messages to you.
+
+# License
+
+MIT

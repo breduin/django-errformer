@@ -4,7 +4,7 @@ setup(
     name='django-errformer',
     version='0.1.0',
     description='Send errors and logs to Telegram chat.',
-    long_description=open('README.md').read(),
+    long_description=open('Readme.md').read(),
     long_description_content_type='text/markdown',
     author='Oleg Tarasov',
     author_email='tolegu@ya.ru',
